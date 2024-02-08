@@ -88,7 +88,6 @@ async function clear() {
 }
 
 io.on("connection", (socket) => {
-  console.log("a user connected");
   updateNumConnected(io, numConnected + 1);
   socket.emit("initial_flowers", flowers);
   socket.on("click", (data) => handleClick(io, data));

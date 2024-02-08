@@ -1,8 +1,74 @@
 const socket = io();
 
 let messagesEl = document.getElementById("messages");
+
+function getEmoji(kind) {
+  const options = [
+    "🌱",
+    "🌿",
+    "🍀",
+    "🍄",
+    "🍃",
+    "💐",
+    "🌷",
+    "🌹",
+    "🌼",
+    "💐",
+    "🌷",
+    "🌹",
+    "🌼",
+    "🌸",
+    "🌺",
+    "🪷",
+    "🪻",
+    "🌻",
+    "💐",
+    "🌷",
+    "🌹",
+    "🌼",
+    "💐",
+    "🌷",
+    "🌹",
+    "🌼",
+    "🌸",
+    "🌺",
+    "🪷",
+    "🪻",
+    "🌻",
+    "💐",
+    "🌷",
+    "🌹",
+    "🌼",
+    "💐",
+    "🌷",
+    "🌹",
+    "🌼",
+    "🌸",
+    "🌺",
+    "🪷",
+    "🪻",
+    "🌻",
+    "💐",
+    "🌷",
+    "🌹",
+    "🌼",
+    "💐",
+    "🌷",
+    "🌹",
+    "🌼",
+    "🌸",
+    "🌺",
+    "🪷",
+    "🪻",
+    "🌻",
+  ];
+  const index = kind % options.length;
+  return options[index];
+}
+
 function addFlower(flower) {
-  messagesEl.innerHTML += `<p>${JSON.stringify(flower)}</p>`;
+  const emoji = getEmoji(flower.kind);
+  messagesEl.innerHTML += `<div class='flower' style='left: ${flower.location.x}px; top: ${flower.location.y}px;'>${emoji}</div>`;
 }
 
 socket.on("connect", () => {
@@ -35,7 +101,7 @@ document.getElementById("clear").addEventListener("click", (e) => {
 document.addEventListener("click", (e) => {
   console.log("Click!:", e);
   if (e.target == document.getElementById("clear")) return;
-  data = { x: e.x, y: e.y };
+  data = { x: e.x - 30, y: e.y - 30 };
   socket.emit("click", data);
 });
 

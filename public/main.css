@@ -1,30 +1,62 @@
 body {
-  text-align: center;
-  font-weight: 700;
-}
-
-#hello-wrapper {
-  color: #fff;
-  font-family: 'Source Sans Pro', sans-serif;
-}
-
-.typewriter {
-  border-right: solid 5px transparent;
-  white-space: nowrap;
+  width: 96vw;
+  margin: auto;
+  background-color: rgb(229, 255, 242);
   overflow: hidden;
-  font-family: 'Source Sans Pro', sans-serif;
-  font-size: 50px;
-  animation:
-    animated-text 1.2s steps(17, end) 1s 1 normal both
 }
 
-/* text animation */
-@keyframes animated-text {
-  from {
-    width: 0;
+@media (min-screen-width: 768px) {
+  body {
+    padding-top: 2vh;
   }
 
-  to {
-    width: 100%;
+  .flower {
+    font-size: .3em;
   }
+}
+
+#topbar {
+  display: flex;
+  justify-content: space-between;
+}
+
+#nConnections {
+  padding: 1em;
+  font-size: 3em;
+  border-bottom-left-radius: 10px;
+  box-shadow: -3px 3px 5px -2px gray;
+}
+
+#clear {
+  padding: 1em;
+  font-size: 3em;
+  border-bottom-right-radius: 10px;
+  box-shadow: 3px 3px 5px -2px gray;
+}
+
+.flower {
+  position: absolute;
+  font-size: 6em;
+}
+
+.Carnation {
+  background-image: url('/img/carnation.png');
+}
+
+.Sunflower {
+  background-image: url('/img/sunflower.png');
+}
+
+.Rose {
+  background-image: url('/img/rose.png');
+}
+
+.freesia {
+  background-image: url('/img/freesia.png');
+}
+
+#footer {
+  position: absolute;
+  font-size: 0.9em;
+  bottom: 0;
 }

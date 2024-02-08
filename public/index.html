@@ -2,17 +2,24 @@
 <html lang=en>
 
 <head>
-  <meta charset=utf-8>
+  <meta charset=utf-16>
   <title>Valentine's 2024</title>
   <link rel="stylesheet" type="text/css" href="/main.css">
 </head>
 
 <body>
-  <h1>Welcome!</h1>
-  <p>Connections: <span id="nConnections"></span></p>
-  <button id="clear">Clear</button>
+  <div id="topbar">
+    <div id="clear">X</div>
+    <div id="nConnections"></div>
+  </div>
   <div id="messages"></div>
   <div id="canvas"></div>
+  <div id="footer">
+    <a href="https://www.flaticon.com/free-icons/flower" title="flower icons">Flower icons created by Freepik, Triberion
+      -
+      Flaticon</a>
+    - Flaticon</a>
+  </div>
   <script src="https://cdn.socket.io/4.7.4/socket.io.min.js"></script>
   <script type="text/javascript" src="/sockets.js"></script>
 </body>

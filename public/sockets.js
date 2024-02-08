@@ -101,7 +101,7 @@ document.getElementById("clear").addEventListener("click", (e) => {
 document.addEventListener("click", (e) => {
   console.log("Click!:", e);
   if (e.target == document.getElementById("clear")) return;
-  data = { x: e.x - 30, y: e.y - 30 };
+  data = { x: e.x, y: e.y };
   socket.emit("click", data);
 });
 

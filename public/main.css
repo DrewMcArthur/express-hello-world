@@ -39,25 +39,3 @@ body {
   font-size: 6em;
   margin: -63px -48px;
 }
-
-.Carnation {
-  background-image: url('/img/carnation.png');
-}
-
-.Sunflower {
-  background-image: url('/img/sunflower.png');
-}
-
-.Rose {
-  background-image: url('/img/rose.png');
-}
-
-.freesia {
-  background-image: url('/img/freesia.png');
-}
-
-#footer {
-  position: absolute;
-  font-size: 0.9em;
-  bottom: 0;
-}

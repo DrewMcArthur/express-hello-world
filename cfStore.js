@@ -1,4 +1,5 @@
 // this module interfaces with our cloudflare worker backend
+// don't really need the permanence of the cloudflare worker so turning that off for now
 
 class Store {
   constructor() {
@@ -6,6 +7,7 @@ class Store {
   }
 
   async getAll() {
+    return [];
     try {
       const response = await fetch(this.storeUrl);
       return await response.json();
@@ -15,6 +17,11 @@ class Store {
   }
 
   async newFlower(data) {
+    return {
+      color: Math.floor(Math.random() * 100),
+      kind: Math.floor(Math.random() * 100),
+      location: data
+    }
     console.log("sending new flower to store: ", data);
     let url = this.storeUrl + "create";
     try {
@@ -37,6 +44,7 @@ class Store {
   }
 
   async clear() {
+    return;
     console.log("clearing store");
     let url = this.storeUrl + "clear";
     try {

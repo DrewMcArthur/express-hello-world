@@ -61,7 +61,7 @@ app.use("*", (req, res) => {
  * get initial data from cloudflare
  */
 let numConnected = 0;
-let flowers;
+let flowers = [];
 
 store.getAll().then((data) => {
   flowers = data;
